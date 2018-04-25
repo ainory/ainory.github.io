@@ -14,7 +14,8 @@ baseurl:            ""
 permalink:          /:year/:month/:day/:title.html
 
 # Markdown
-markdown:           rdiscount
+#markdown:           rdiscount
+markdown:           kramdown
 
 # Navigation
 nav:
