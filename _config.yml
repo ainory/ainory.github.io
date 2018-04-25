@@ -1,4 +1,4 @@
-name: ainory dev blog..
+name: ainory
 description: >
     ainory dev blog..
 about: >
@@ -18,7 +18,7 @@ disqus_shortname:
 
 rtl: false
 owner:
-  name:           whitepaper
+  name:           ainory
   avatar:         "https://ainory.github.io/images/icon.jpg"
   email:          "ainory83@gmail.com"
   # Social networking links used in footer. Update and remove as you like.
