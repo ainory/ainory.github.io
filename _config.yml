@@ -1,44 +1,36 @@
-# # # # # # # #
-#   K i k o   #
-# # # # # # # #
+name: ainory dev blog..
+description: >
+    ainory dev blog..
+about: >
+    ainory dev blog..
 
-# Basic
-name:               "ainory"
-description: ainory dev blog
-avatar: https://ainory.github.io/images/icon.jpg
+master_repo: false
+url: "https://github.com/ainory/ainory.github.io"
+markdown: kramdown
+highlighter: rouge
 
-# URL
-url: http://ainory.github.io
-baseurl:            ""
-#baseurl:            "" #For Root Domain
-permalink:          /:year/:month/:day/:title.html
+plugins: ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed']
 
-# Markdown
-#markdown:           rdiscount
-markdown:           kramdown
+paginate: 4
 
-# Navigation
-nav:
-  - name:           "About"
-    href:           "//ainory.github.io/about"
-  #- name:           "Download"
-  #  href:           "//github.com/gfjaru/Kiko/releases"
+logo:             logo.png
+disqus_shortname:
 
-# Sass
-sass:
-  style:            :compressed
+rtl: false
+owner:
+  name:           whitepaper
+  avatar:         "https://ainory.github.io/images/icon.jpg"
+  email:          "ainory83@gmail.com"
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:
+  github: https://github.com/ainory
+  stackexchange:
+  linkedin:
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:
 
-# Scopes
-defaults:
-  -
-    scope:
-      path:         ""
-      type:         "pages"
-    values:
-      layout:       "page"
-  -
-    scope:
-      path:         ""
-      type:         "posts"
-    values:
-      layout:       "post"
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
