@@ -1,36 +1,5 @@
-name: ainory dev blog..
-description: >
-    ainory dev blog..
-about: >
-    ainory dev blog..
-
-master_repo: false
-url: "ainory.github.io"
-markdown: kramdown
-highlighter: rouge
-
-plugins: ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed']
-
-paginate: 4
-
-logo:             logo.png
-disqus_shortname:
-
-rtl: false
-owner:
-  name:           whitepaper
-  avatar:         "https://ainory.github.io/images/icon.jpg"
-  email:          "ainory83@gmail.com"
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  github: https://github.com/ainory
-  stackexchange:
-  linkedin:
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:
-
-# Analytics and webmaster tools stuff goes here
+title: Hacker theme
+description: Hacker is a theme for GitHub Pages.
+show_downloads: true
 google_analytics:
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+theme: jekyll-theme-hacker

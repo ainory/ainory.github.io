@@ -1,111 +1,109 @@
-# White Paper
+# The Hacker theme
 
-**White Paper** is a theme for Jekyll. It is built keeping content in focus and is best for writers/developers who also like to share code with their essays.
+[![Build Status](https://travis-ci.org/pages-themes/hacker.svg?branch=master)](https://travis-ci.org/pages-themes/hacker) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-hacker.svg)](https://badge.fury.io/rb/jekyll-theme-hacker)
 
-# White Paper in Action
+*Hacker is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/hacker), or even [use it today](#usage).*
 
-- Home page
+![Thumbnail of Hacker](thumbnail.png)
 
-![home](https://cldup.com/FRewyA-EEI-3000x3000.png)
+## Usage
 
+To use the Hacker theme:
 
-- Post Detail View
+1. Add the following to your site's `_config.yml`:
 
-![post detail](https://cldup.com/mERDZPBshM-3000x3000.png)
+    ```yml
+    theme: jekyll-theme-hacker
+    ```
 
-## How to use White Paper
+2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
 
-Fork the repo to your account by clicking the button on the top right as shown in the image:
+    ```ruby
+    gem "github-pages", group: :jekyll_plugins
+    ```
 
-![fork](https://cldup.com/vOF0oaUkh5-3000x3000.png) and then where you want to fork it as shown below.
+## Customizing
 
-Next, Go the the project settings and change the repository name to `<username>.github.io` where username is your username.
+### Configuration variables
 
-Change these entries in the `_config.yml` file:
-
-Also, change this line in head.html [link](https://github.com/vinitkumar/white-paper/blob/9ad021a8f94c6240351bd57eda301b5f207e554e/_includes/head.html#L28)
-
-```html
-<!-- From this -->
-<link rel="stylesheet" href=" {{ '/css/main.min.css' | relative_url }}" type="text/css" />
-<!-- To this -->
-<link rel="stylesheet" href=" {{ '/css/main.min.css' | absolute_url }}" type="text/css" />
-
-```
-
-
-This will make sure that the path of CSS is correct and the theme loads correctly.
+Hacker will respect the following variables, if set in your site's `_config.yml`:
 
 ```yml
-master_repo: false
-url: "<username>.github.io"
-rtl: false  # change to true if posts is in Arabic/other Right to left language.
-```
-Also, change all other fields in the `_config.yml` file to your choice.
-
-## Installation
-
-### Local Development
-
-This theme requires you to install couple of tools first to setup jekyll locally.
-
-```$
-git clone git@github.com:vinitkumar/white-paper.git
-
-# If you have ruby installed.
-gem install jekyll bundler
-
-# If you have node installed.
-npm install
-sudo npm install -g grunt-cli  #to get the task runner for grunt.
-bundle install
-jekyll serve
-
-# on running the serve script, the site will be live on
-http://127.0.0.1:4000
-```
-This theme uses grunt to concat & minify the css for best performance. In order to prepare the css build. Run `grunt`
-It will create a main.min.css file in the css folder.
-
-### Switch Syntax Highlighting.
-
-This theme also provides syntax highlighting in different theme. Inside css folder, there is a syntax folder.
-
-```$
-.
-├── emacs.css
-├── github.css
-├── monokai.css
-├── native.css
-├── syntax.css
-└── vim.css
-
+title: [The title of your site]
+description: [A short description of your site's purpose]
 ```
 
-Now in the gruntfiles.js
+Additionally, you may choose to set the following optional variables:
 
-```js
-concat: {
-  dist: {
-    src: [
-      'css/base.css',
-      'css/sytax/emacs.css', // change this to another theme if you prefer, like vim.css and run grunt
-      'css/octicons.css'
-    ],
-    dest: 'css/<%= pkg.name %>.add.css'
-  }
-}
+```yml
+show_downloads: ["true" or "false" to indicate whether to provide a download URL]
+google_analytics: [Your Google Analytics tracking ID]
 ```
 
-## License
-* see [LICENSE](https://github.com/vinitkumar/white-paper/blob/gh-pages/LICENSE) file
+### Stylesheet
 
-## Version
-* Version 4.0.0
+If you'd like to add your own custom styles:
 
-## Contact
-#### Developer
+1. Create a file called `/assets/css/style.scss` in your site
+2. Add the following content to the top of the file, exactly as shown:
+    ```scss
+    ---
+    ---
 
-* Homepage: http://vinitkumar.me
-* e-mail: vinit1414.08@bitmesra.ac.in
-* Twitter: [@vinitkme](https://twitter.com/vinitkme "vinitkme on twitter")
+    @import "{{ site.theme }}";
+    ```
+3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+
+*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+
+### Layouts
+
+If you'd like to change the theme's HTML layout:
+
+1. [Copy the original template](https://github.com/pages-themes/hacker/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
+2. Create a file called `/_layouts/default.html` in your site
+3. Paste the default layout content copied in the first step
+4. Customize the layout as you'd like
+
+### Overriding GitHub-generated URLs
+
+Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+
+1. Look at [the template source](https://github.com/pages-themes/hacker/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
+    ```yml
+    github:
+      zip_url: http://example.com/download.zip
+      another_url: another value
+    ```
+3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+
+*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+
+For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+
+## Roadmap
+
+See the [open issues](https://github.com/pages-themes/hacker/issues) for a list of proposed features (and known issues).
+
+## Project philosophy
+
+The Hacker theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+
+## Contributing
+
+Interested in contributing to Hacker? We'd love your help. Hacker is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+
+### Previewing the theme locally
+
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
+
+1. Clone down the theme's repository (`git clone https://github.com/pages-themes/hacker`)
+2. `cd` into the theme's directory
+3. Run `script/bootstrap` to install the necessary dependencies
+4. Run `bundle exec jekyll serve` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+
+### Running tests
+
+The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` one before the test script will work.
