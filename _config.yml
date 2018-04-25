@@ -4,8 +4,11 @@
 
 # Basic
 name:               "ainory"
+description: ainory dev blog
+avatar: https://ainory.github.io/images/icon.jpg
 
 # URL
+url: http://ainory.github.io
 baseurl:            ""
 #baseurl:            "" #For Root Domain
 permalink:          /:year/:month/:day/:title.html
