@@ -13,12 +13,12 @@ author: "ainory"
     *   data는 기존에 테스트용으로 사용하고있는 Metatron에서 수집하는 data를 사용한다.
     *   잘만 되면 골칫덩이 ibdata 문제는 더이상 신경안써도 될듯…
 
+
 *   Issue
     *   ibdata가 여려개일때 적용되지 않는다고 함
     *   ibdata1에 autoextend옵션으로 되어있어야 하는듯.(확인 해봐야함)
 
   
-
 *   참조
     *   [https://mariadb.org/defragmenting-unused-space-on-innodb-tablespace/](https://mariadb.org/defragmenting-unused-space-on-innodb-tablespace/)
     *   [http://seonguck.blogspot.kr/2014/07/defragmentation-innodb-table-on-mariadb.html](http://seonguck.blogspot.kr/2014/07/defragmentation-innodb-table-on-mariadb.html)
@@ -52,6 +52,7 @@ author: "ainory"
         *   innodb\_defragment\_frequency: 40
         *   innodb\_defragment\_n_pages: 7
         *   innodb\_defragment\_stats_accuracy: 0
+
 
 *   ibdata size (테스트 시작 이후로 ibdata1 size 변동 없음)
 
