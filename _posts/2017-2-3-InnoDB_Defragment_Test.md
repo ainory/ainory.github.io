@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "\[mariadb\] InnoDB Defragment Test"
+title: "mariadb - InnoDB Defragment Test"
 categories: "database"
 author: "ainory"
 ---
